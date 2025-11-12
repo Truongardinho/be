@@ -22,6 +22,21 @@ const eventSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
   },
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
+    // required: true // Bạn có thể bật nếu muốn category là bắt buộc
+  },
+  tags: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Tag',
+  }],
+  capacity: {
+    type: Number,
+  },
+  price: {
+    type: Number,
+  },
   images: {
     type: [String],
     default: [],
